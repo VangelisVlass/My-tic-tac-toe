@@ -1,0 +1,239 @@
+:root {
+  --boxBorderRadius: 10px;
+  --boxBorderColor: rgb(102 102 102);
+  --titleBackgroundColor: rgb(97, 119, 104);
+  --nameInputsBackgroundColor: rgb(141, 155, 146);
+  --boxShadowColor: #5c5c5c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: cursive;
+  background-color: #ededed;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h3{
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: 1fr 3fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar game";
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+  margin: 10px 20px 0 -10px;
+}
+
+header > h1 {
+  border-radius: 0 5px 5px 0;
+  background-color: var(--titleBackgroundColor);
+  box-shadow: 0px 0px 10px var(--boxShadowColor);
+  padding: 3rem;
+  position: relative;
+  z-index: 1;
+}
+header > div {
+  border-radius: 0 5px 5px 0;
+  background-color: var(--nameInputsBackgroundColor);
+  box-shadow: 0px 0px 10px var(--boxShadowColor);
+}
+
+.name-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px 0 5px 14px;
+  margin-top: -10px;
+}
+
+aside {
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 5px 5px 0;
+  background-color: rgb(63, 63, 63);
+  box-shadow: 0px 0px 10px var(--boxShadowColor);
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 30px;
+  margin: 5px;
+  margin-right: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  transition: width 0.7s;
+}
+
+.btn:hover{
+
+  width: 100px;
+  transition: width 0.7s;
+}
+
+.btn .btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
+  width: 100%;
+ }
+
+.btn:hover .btn-txt {
+  opacity: 1;
+  transition: opacity 2.5s;
+}
+
+.btn i{
+  opacity: 1;
+  transition: opacity 0.2s;
+  margin-left: 10px;
+}
+
+.btn:hover i{
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.start-btn {
+  background-color: #04aa2e;
+}
+.start-btn:hover{
+  background-color: #016b44;
+
+}
+
+.restart-btn {
+  background-color: #af252c;
+}
+.restart-btn:hover {
+  background-color: #851c22;
+}
+.clear-btn {
+  background-color: #ddc438;
+}
+.clear-btn:hover {
+  background-color: #aa972b;
+}
+
+main {
+  grid-area: game;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.game-container {
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  grid-template-columns: 15vmin 15vmin 15vmin;
+  grid-template-rows: 15vmin 15vmin 15vmin;
+  grid-template-areas:
+    "box1 box2 box3"
+    "box4 box5 box6"
+    "box7 box8 box9";
+}
+
+.box-rounded {
+  border-radius: 10px;
+  background-color: rgb(225 225 225);
+  box-shadow: 0px 0px 10px var(--boxShadowColor);
+  padding: 10px;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid var(--boxBorderColor);
+  border-top: none;
+  border-left: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+.box:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+#announcer {
+  padding: 24px 0 0 0;
+}
+
+input[type="text"] {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: #ededed;
+  border: none;
+}
+
+.playersTurn {
+  border-radius: 10px;
+  border: 3px solid var(--boxBorderColor);
+  background-color: var(--boxBorderColor);
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#playerOneBox,
+#playerTwoBox {
+  display: inline;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.wobble {
+  animation: wobble 2s ease infinite;
+}
+@keyframes wobble {
+  0% { transform: translateX(0%); }
+  15% { transform: translateX(-25%) rotate(-5deg); }
+  30% { transform: translateX(20%) rotate(3deg); }
+  45% { transform: translateX(-15%) rotate(-3deg); }
+  60% { transform: translateX(10%) rotate(2deg); }
+  75% { transform: translateX(-5%) rotate(-1deg); }
+  100% { transform: translateX(0%); }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./logic.js"></script>
+    <link rel="stylesheet" href="resetCSS.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="tic-tac-toe.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <h1>My Tic Tac Toe</h1>
+      <div class="name-container">
+        <div id="playerOneBox">
+          <label for="playerOne"><b>X</b></label>
+          <input type="text" id="playerOne" placeholder="Player One" />
+          <i id="arrow-one" class="fa fa-arrow-left wobble"></i>
+        </div>
+        <div id="playerTwoBox">
+          <label for="playerTwo"><b>O</b></label>
+          <input type="text" id="playerTwo" placeholder="Player Two" />
+          <i id="arrow-two" class="fa fa-arrow-left wobble"></i>
+        </div>
+      </div>
+    </header>
+    <aside>
+      <button id="srt-btn" class="btn start-btn">
+        <i class="fa fa-play"></i>
+        <h3 class="btn-txt">Start</h3>
+      </button>
+
+      <button id="rst-btn" class="btn restart-btn">
+        <i class="fa fa-refresh"></i>
+        <h3 class="btn-txt">Restart</h3>
+      </button>
+
+      <button id="clr-btn" class="btn clear-btn">
+        <i class="fa fa-close"></i>
+        <h3 class="btn-txt">Clear</h3>
+      </button>
+    </aside>
+    <main>
+      <div class="column col-lg game-container box-rounded">
+        <div data-index="0" class="box"></div>
+        <div data-index="1" class="box"></div>
+        <div data-index="2" class="box"></div>
+        <div data-index="3" class="box"></div>
+        <div data-index="4" class="box"></div>
+        <div data-index="5" class="box"></div>
+        <div data-index="6" class="box"></div>
+        <div data-index="7" class="box"></div>
+        <div data-index="8" class="box"></div>
+      </div>
+      <div>
+        <h2 id="announcer"></h2>
+      </div>
+    </main>
+  </body>
+</html>
